@@ -48,7 +48,7 @@ uint64_t FibRecursive(const uint64_t l)
 //
 // (i): calculate fibonnaci using formula
 //
-constexpr uint64_t FibFormula(const uint64_t l)
+uint64_t FibFormula(const uint64_t l)
 {
 	const auto sqrt_5 = sqrt(5);
 	return ((pow((1+sqrt_5),l) - pow((1-sqrt_5),l))/(pow(2,l)*sqrt_5)); 
@@ -84,7 +84,14 @@ int main(int argc, const char* argv[])
 		return EXIT_FAILURE;
 	}
 
-	cout.imbue(locale("en_US.UTF8"));
+	try
+	{
+		cout.imbue(locale("en_US.UTF8"));
+	}
+	catch (std::runtime_error) {
+		// ignore
+	}
+
 	cout << setw(19) << "Method" << setw(20) << "Result" << setw(20) << "Func. Calls" << endl;
 	cout << ">> FibFormula  (" << setw(2) << setfill('0') << l << ")" << setw(20) << setfill(' ') << FibFormula(l) << setw(20) << "1" << endl;
 	cout << ">> FibRecursive(" << setw(2) << setfill('0') << l << ")" << setw(20) << setfill(' ') << FibRecursive(l) << setw(20) << g_cc << endl;
