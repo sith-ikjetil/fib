@@ -1,3 +1,8 @@
+//: Title       : fib.cpp
+//: Date        : 2021-10-04
+//: Author      : "Kjetil Kristoffer Solberg" <post@ikjetil.no>
+//: Version     : 1.0
+//: Description : A simple fibonacci series n-th calculator.
 //
 // #include
 //
