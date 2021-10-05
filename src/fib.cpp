@@ -86,7 +86,7 @@ int main(int argc, const char* argv[])
 
 	try
 	{
-		cout.imbue(locale("en_US.UTF8"));
+		cout.imbue(locale(""));
 	}
 	catch (std::runtime_error) {
 		// ignore
