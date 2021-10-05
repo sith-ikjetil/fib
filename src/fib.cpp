@@ -62,8 +62,8 @@ uint64_t FibFormula(const uint64_t l)
 //
 int main(int argc, const char* argv[])
 {
-	cout << "## CALCULATING FIBONNACI SERIES" << endl;
-	
+	cout << "## CALCULATING FIBONNACI SERIES N-th" << endl;
+
 	if ( argc != 2 ) {
 		cout << "ABEND FAILURE: INVALID NUMBER OF ARGUMENTS." << endl;
 		return EXIT_FAILURE;
@@ -79,8 +79,8 @@ int main(int argc, const char* argv[])
 		return EXIT_FAILURE;
 	}
 
-	if ( l <= 0 || l >= 51 ) {
-		cout << "ABEND FAILURE: INVALID ARGUMENT VALUE. OUT OF RANGE." << endl;
+	if ( l <= 0 || l > 93 ) {
+		cout << "ABEND FAILURE: INVALID ARGUMENT VALUE. OUT OF RANGE: n-th must be between 1 and 93." << endl;
 		return EXIT_FAILURE;
 	}
 
@@ -92,9 +92,17 @@ int main(int argc, const char* argv[])
 		// ignore
 	}
 
-	cout << setw(19) << "Method" << setw(20) << "Result" << setw(20) << "Func. Calls" << endl;
-	cout << ">> FibFormula  (" << setw(2) << setfill('0') << l << ")" << setw(20) << setfill(' ') << FibFormula(l) << setw(20) << "1" << endl;
-	cout << ">> FibRecursive(" << setw(2) << setfill('0') << l << ")" << setw(20) << setfill(' ') << FibRecursive(l) << setw(20) << g_cc << endl;
+	cout << "## n-th: " << l << endl;
+	cout << endl;
+	cout << setw(15) << "Method" << setw(30) << "Result" << setw(30) << "Func. Calls" << endl;
+	cout << setw(15) << ">> FibFormula" << setw(30) << setfill(' ') << FibFormula(l) << setw(30) << "1" << endl;
+
+	if (l <= 50 ) {
+		cout << setw(15) << ">> FibRecursive" << setw(30) << setfill(' ') << FibRecursive(l) << setw(30) << g_cc << endl;
+	}
+	else {
+		cout << setw(15) << ">> FibRecursive" << setw(30) << setfill(' ') << "-" << setw(30) << "-" << endl;
+	}
 
 	return EXIT_SUCCESS;
 }
