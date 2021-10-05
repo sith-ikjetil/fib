@@ -62,7 +62,7 @@ uint64_t FibFormula(const uint64_t l)
 //
 int main(int argc, const char* argv[])
 {
-	cout << "## CALCULATING FIBONNACI SERIES N-th" << endl;
+	cout << "## FIBONNACI SERIES N-th CALCULATOR" << endl;
 
 	if ( argc != 2 ) {
 		cout << "ABEND FAILURE: INVALID NUMBER OF ARGUMENTS." << endl;
@@ -80,7 +80,7 @@ int main(int argc, const char* argv[])
 	}
 
 	if ( l <= 0 || l > 93 ) {
-		cout << "ABEND FAILURE: INVALID ARGUMENT VALUE. OUT OF RANGE: n-th must be between 1 and 93." << endl;
+		cout << "ABEND FAILURE: INVALID ARGUMENT VALUE. OUT OF RANGE." << endl;
 		return EXIT_FAILURE;
 	}
 
@@ -92,7 +92,7 @@ int main(int argc, const char* argv[])
 		// ignore
 	}
 
-	cout << "## n-th: " << l << endl;
+	cout << "## Calculating for n-th: " << l << endl;
 	cout << endl;
 	cout << setw(15) << "Method" << setw(30) << "Result" << setw(30) << "Func. Calls" << endl;
 	cout << setw(15) << ">> FibFormula" << setw(30) << setfill(' ') << FibFormula(l) << setw(30) << "1" << endl;
