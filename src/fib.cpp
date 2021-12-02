@@ -1,7 +1,7 @@
 //: Title       : fib.cpp
 //: Date        : 2021-10-04
 //: Author      : "Kjetil Kristoffer Solberg" <post@ikjetil.no>
-//: Version     : 1.0
+//: Version     : 1.2
 //: Description : A simple fibonacci series n-th calculator.
 //
 // #include
@@ -26,6 +26,14 @@ using std::sqrt;
 // global data
 //
 uint64_t g_cc = 0;
+
+//
+// #define
+//
+#define VERSION_NO     "1.2"
+#define CLR_GREEN      "\033[32m"
+#define CLR_WHITE      "\033[37;1m"
+#define CLR_RESET      "\033[0m"
 
 //
 // Function: Fib
@@ -62,7 +70,13 @@ uint64_t FibFormula(const uint64_t l)
 //
 int main(int argc, const char* argv[])
 {
-	cout << "## FIBONNACI SERIES N-th CALCULATOR" << endl;
+	cout << CLR_RESET << CLR_GREEN;
+	cout << "##" << endl;
+	cout << "## Fibonnaci Series N-th Calculator" << endl;
+	cout << "## Author  : Kjetil Kristoffer Solberg <post@ikjetil.no>" << endl;
+	cout << "## Version : " << VERSION_NO << endl;
+	cout << "##" << endl;
+	cout << CLR_RESET << CLR_WHITE;
 
 	if ( argc != 2 ) {
 		cout << "ABEND FAILURE: INVALID NUMBER OF ARGUMENTS." << endl;
@@ -92,8 +106,11 @@ int main(int argc, const char* argv[])
 		// ignore
 	}
 
+	cout << CLR_RESET << CLR_GREEN;
 	cout << "## Calculating for n-th: " << l << endl;
-	cout << endl;
+	cout << "##" << endl;
+	cout << CLR_RESET << CLR_WHITE;
+
 	cout << setw(15) << "Method" << setw(30) << "Result" << setw(30) << "Func. Calls" << endl;
 	cout << setw(15) << ">> FibFormula" << setw(30) << setfill(' ') << FibFormula(l) << setw(30) << "1" << endl;
 
