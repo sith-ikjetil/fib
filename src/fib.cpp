@@ -75,6 +75,7 @@ int main(int argc, const char* argv[])
 	cout << "## Fibonnaci Series N-th Calculator" << endl;
 	cout << "## Author  : Kjetil Kristoffer Solberg <post@ikjetil.no>" << endl;
 	cout << "## Version : " << VERSION_NO << endl;
+	cout << "## Usage   : fib <integer>" << endl;
 	cout << "##" << endl;
 	cout << CLR_RESET << CLR_WHITE;
 
