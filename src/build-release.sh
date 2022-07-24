@@ -1,13 +1,13 @@
 #!/bin/bash
-#: Title       : build-debug.sh
+#: Title       : build-release.sh
 #: Date        : 2022-07-24
 #: Author      : Kjetil Kristoffer Solberg <post@ikjetil.no>
 #: Version     : 1.0
 #: Description : Builds fib.
 echo "Building fib ..."
-echo "> using debug build < "
+echo "> using release build < "
 
-g++ -g fib.cpp --std=c++17 -o fib
+g++ fib.cpp --std=c++17 -o fib
 if [[ $? -eq 0 ]]
 then
     echo "> fib build ok"
